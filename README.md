@@ -16,24 +16,24 @@ A monorepo project that implements the same TODO application using different arc
 ```mermaid
 graph TD
     %% External Services
-    EXT[🌐 External User Service<br/>API/Database/Auth Provider]
+    EXT["🌐 External User Service<br/>API/Database/Auth Provider"]
     
     %% Core Entities
-    USER[👤 User Entity<br/>- id: string<br/>- name: string<br/>- age: number]
-    TASK[📝 Task Entity<br/>- id: string<br/>- title: string<br/>- description: string<br/>- date: Date<br/>- userId: string]
+    USER["👤 User Entity<br/>- id: string<br/>- name: string<br/>- age: number"]
+    TASK["📝 Task Entity<br/>- id: string<br/>- title: string<br/>- description: string<br/>- date: Date<br/>- userId: string"]
     
     %% Application Layer
-    APP[🏗️ Application Core<br/>Business Logic Layer]
+    APP["🏗️ Application Core<br/>Business Logic Layer"]
     
     %% Use Cases / Services
-    US[👤 User Service<br/>- getUserById()<br/>- getUserProfile()]
-    TS[📋 Task Service<br/>- createTask()<br/>- updateTask()<br/>- deleteTask()<br/>- listUserTasks()]
+    US["👤 User Service<br/>- getUserById()<br/>- getUserProfile()"]
+    TS["📋 Task Service<br/>- createTask()<br/>- updateTask()<br/>- deleteTask()<br/>- listUserTasks()"]
     
     %% Data Layer
-    TR[📊 Task Repository<br/>- save()<br/>- findById()<br/>- findByUserId()<br/>- update()<br/>- delete()]
+    TR["📊 Task Repository<br/>- save()<br/>- findById()<br/>- findByUserId()<br/>- update()<br/>- delete()"]
     
     %% Presentation Layer
-    UI[🖥️ User Interface<br/>- Show user name<br/>- List tasks<br/>- Create/Edit forms<br/>- Delete confirmations]
+    UI["🖥️ User Interface<br/>- Show user name<br/>- List tasks<br/>- Create/Edit forms<br/>- Delete confirmations"]
     
     %% Relationships
     EXT --> US
