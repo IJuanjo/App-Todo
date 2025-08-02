@@ -1,0 +1,14 @@
+{
+  "name": "mvvm-todo",
+  "version": "1.0.0",
+  "description": "Todo application implementing Model-View-ViewModel (MVVM) architecture pattern. Uses ViewModels to bind data between Models and Views, providing better separation of concerns and testability.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["mvvm", "todo", "express", "architecture", "viewmodel"],
+  "author": "",
+  "license": "ISC"
+}

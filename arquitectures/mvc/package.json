@@ -1,0 +1,14 @@
+{
+  "name": "mvc-todo",
+  "version": "1.0.0",
+  "description": "Todo application implementing Model-View-Controller (MVC) architecture pattern. Separates business logic (Model), user interface (View), and application flow control (Controller).",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["mvc", "todo", "express", "architecture"],
+  "author": "",
+  "license": "ISC"
+}

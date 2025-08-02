@@ -1,0 +1,14 @@
+{
+  "name": "clean-architecture-todo",
+  "version": "1.0.0",
+  "description": "Todo application implementing Clean Architecture (Onion Architecture) pattern. Organized in layers: Domain (entities), Application (use cases), Infrastructure (data access), and Presentation (controllers). Dependencies point inward toward the domain.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["clean-architecture", "todo", "express", "architecture", "domain", "use-cases"],
+  "author": "",
+  "license": "ISC"
+}

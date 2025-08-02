@@ -1,0 +1,12 @@
+{
+  "name": "node-app-todo",
+  "version": "1.0.0",
+  "description": "this is a node app for managing todo items with architecture MVC, MVVM, Clean Architecture y Hexagonal Architecture for packages (monorepo)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "hexagonal-todo",
+  "version": "1.0.0",
+  "description": "Todo application implementing Hexagonal Architecture (Ports and Adapters) pattern. Core business logic is isolated in the center, with ports defining interfaces and adapters implementing external integrations (database, web, etc.).",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["hexagonal-architecture", "todo", "express", "architecture", "ports", "adapters"],
+  "author": "",
+  "license": "ISC"
+}
