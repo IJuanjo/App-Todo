@@ -1,8 +1,9 @@
-import { Task } from './../../model/task/dto/task.dto';
-import { TaskRepository } from "../../model/task/dao/task.dao";
-import db from '../../model/task/db/taskDB';
+import { Task } from "../dto/task.dto";
+import { TaskRepository } from "./TaskRepository";
+import db from '../database/taskDB';
 
-class TaskService implements TaskRepository {
+
+class TaskRepositoryImpl implements TaskRepository {
     async delete(id: string): Promise<Task> {
         await db.read();
         const task = db.data.tasks.find(task => task.id === id);
@@ -35,4 +36,4 @@ class TaskService implements TaskRepository {
         return task || null;
     }
 }
-export default new TaskService();
+export default new TaskRepositoryImpl();

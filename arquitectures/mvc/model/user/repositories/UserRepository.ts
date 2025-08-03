@@ -1,5 +1,5 @@
 import { User } from "../dto/user.interface";
 
-export interface UserService {
+export interface UserRepository {
     getUserById(id: string): Promise<User | null>;
 }
