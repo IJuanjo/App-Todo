@@ -1,9 +1,9 @@
-import { HttpEntity } from "../model/http/httpEntity";
-import { User } from "../model/user/dto/user.interface";
-import userService from "../services/user/userService";
+import { HttpEntity } from "../../model/http/httpEntity";
+import { User } from "../../model/user/dto/user.interface";
 import { Request, Response } from "express";
+import userService from "../../adapters/user/userService";
 
-class UserController{
+class UserController {
     async getUserById(req: Request, res: Response): Promise<HttpEntity<User>> {
         const { id } = req.params;
         const user = await userService.getUserById(id);
