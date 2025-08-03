@@ -1,14 +1,15 @@
 import { Request, Response } from "express";
 import { HttpEntity } from "../../model/http/httpEntity";
 import { Task } from "../../model/task/dto/task.dto";
-import { TaskService } from "../../model/task/services/taskService";
+import { TaskService } from "../../model/task/services/TaskService";
 import TaskRepositoryImpl from "../../model/task/repositories/TaskRepositoryImpl";
+
 class TaskController {
     taskService: TaskService;
     constructor() {
         this.taskService = new TaskService(TaskRepositoryImpl);
     }
-    async getTaskById(req: Request, res: Response): Promise<HttpEntity<Task> | void> {
+    async getTaskById(req: Request, res: Response): Promise<Response<HttpEntity<Task>> | void> {
         try {
             const { id } = req.params;
             const task = await this.taskService.getTaskById(id);
@@ -31,7 +32,7 @@ class TaskController {
             });
         }
     }
-    async getAllTasks(_: Request, res: Response): Promise<HttpEntity<Task[]> | void> {
+    async getAllTasks(_: Request, res: Response): Promise<Response<HttpEntity<Task>> | void> {
         try {
             const tasks = await this.taskService.getAllTasks();
             if (tasks.length === 0) {
@@ -53,7 +54,7 @@ class TaskController {
             });
         }
     }
-    async createTask(req: Request, res: Response): Promise<HttpEntity<Task> | void> {
+    async createTask(req: Request, res: Response): Promise<Response<HttpEntity<Task>> | void> {
         try {
             const taskData: Task = req.body;
             const newTask = await this.taskService.createTask(taskData);
@@ -70,7 +71,7 @@ class TaskController {
             });
         }
     }
-    async updateTask(req: Request, res: Response): Promise<HttpEntity<Task> | void> {
+    async updateTask(req: Request, res: Response): Promise<Response<HttpEntity<Task>> | void> {
         try {
             const { id } = req.params;
             const taskData: Task = req.body;
@@ -94,7 +95,7 @@ class TaskController {
             });
         }
     }
-    async deleteTask(req: Request, res: Response): Promise<HttpEntity<void> | void> {
+    async deleteTask(req: Request, res: Response): Promise<Response<HttpEntity<Task>> | void> {
         try {
             const { id } = req.params;
             const deleted = await this.taskService.deleteTask(id);
@@ -118,4 +119,4 @@ class TaskController {
     }
 }
 
-export default new TaskController();
+export default TaskController;
