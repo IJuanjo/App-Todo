@@ -10,5 +10,5 @@ class UserRepositoryImpl implements UserRepository {
         return user;
     }
 }
-
+export { UserRepositoryImpl };
 export default new UserRepositoryImpl();

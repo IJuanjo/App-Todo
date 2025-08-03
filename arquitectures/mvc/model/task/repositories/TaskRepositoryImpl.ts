@@ -36,4 +36,5 @@ class TaskRepositoryImpl implements TaskRepository {
         return task || null;
     }
 }
+export { TaskRepositoryImpl };
 export default new TaskRepositoryImpl();
