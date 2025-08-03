@@ -4,13 +4,11 @@ import { Task } from '../dto/task.dto';
 
 interface DatabaseSchema {
     tasks: Task[];
-    users: any[];
 }
 
 // Datos por defecto
 const defaultData: DatabaseSchema = {
-    tasks: [],
-    users: []
+    tasks: []
 };
 
 // Crear o cargar la base de datos
