@@ -8,7 +8,15 @@
     "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["mvc", "todo", "express", "architecture"],
+  "keywords": [
+    "mvc",
+    "todo",
+    "express",
+    "architecture"
+  ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
