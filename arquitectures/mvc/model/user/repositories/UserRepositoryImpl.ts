@@ -1,6 +1,6 @@
-import { UserService } from "../../model/user/dao/userService";
+import { UserRepository } from "./UserRepository";
 
-class UserServiceImpl implements UserService {
+class UserRepositoryImpl implements UserRepository {
     async getUserById(id: string) {
         const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id ?? '1'}`);
         if (!response.ok) {
@@ -10,5 +10,5 @@ class UserServiceImpl implements UserService {
         return user;
     }
 }
-
-export default new UserServiceImpl();
+export { UserRepositoryImpl };
+export default new UserRepositoryImpl();
