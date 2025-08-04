@@ -1,18 +1,14 @@
-import { UserService } from "@models/user/services/UserService";
 import { HttpEntity } from "@models/http/httpEntity";
 import { User } from "@models/user/dto/user.interface";
 import { Request, Response } from "express";
-import UserRepositoryImpl from "@models/user/repositories/UserRepositoryImpl";
+import { UserRepository } from "@models/user/repositories/UserRepository";
 
 class UserController {
-    userService: UserService;
-    constructor() {
-        this.userService = new UserService(UserRepositoryImpl);
-    }
+    constructor(private userRepository:UserRepository) {}
     async getUserById(req: Request, res: Response): Promise<Response<HttpEntity<User>> | void> {
         try {
             const { id } = req.params;
-            const user = await this.userService.getUserById(id);
+            const user = await this.userRepository.getUserById(id);
             if (!user) {
                 return res.status(404).json({
                     status: 404,

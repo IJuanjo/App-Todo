@@ -1,9 +1,10 @@
 import { Router } from 'express';
 import TaskController from '@controllers/task/taskController';
+import TaskRepositoryImpl from '@models/task/repositories/TaskRepositoryImpl';
 
 const router = Router();
 
-const taskController = new TaskController();
+const taskController = new TaskController(TaskRepositoryImpl);
 
 router.get('/:id', taskController.getTaskById.bind(taskController));
 router.get('/', taskController.getAllTasks.bind(taskController));
