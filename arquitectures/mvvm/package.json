@@ -1,6 +1,7 @@
 {
   "name": "mvvm-todo",
   "version": "1.0.0",
+  "type": "module",
   "description": "Todo application implementing Model-View-ViewModel (MVVM) architecture pattern. Uses ViewModels to bind data between Models and Views, providing better separation of concerns and testability.",
   "main": "app.js",
   "scripts": {
@@ -25,6 +26,7 @@
   "devDependencies": {
     "@types/express": "^5.0.3",
     "@types/node": "^24.1.0",
-    "@types/uuid": "^10.0.0"
+    "@types/uuid": "^10.0.0",
+    "typescript": "^5.9.2"
   }
 }

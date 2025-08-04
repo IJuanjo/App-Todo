@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "target": "es2022",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "outDir": "./dist",
+        "baseUrl": "src",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "paths": {
+          "@routes/*": ["routes/*"],
+          "@models/*": ["model/*"],
+          "@viewModels/*": ["viewModel/*"],
+          "@database/*": ["model/database/*"],
+        }
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "**/*.spec.ts"]
+}
