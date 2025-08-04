@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
-import { HttpEntity } from "../../model/http/httpEntity";
-import { Task } from "../../model/task/dto/task.dto";
-import { TaskService } from "../../model/task/services/TaskService";
-import TaskRepositoryImpl from "../../model/task/repositories/TaskRepositoryImpl";
+import { HttpEntity } from "@models/http/httpEntity";
+import { Task } from "@models/task/dto/task.dto";
+import { TaskService } from "@models/task/services/TaskService";
+import TaskRepositoryImpl from "@models/task/repositories/TaskRepositoryImpl";
 
 class TaskController {
     taskService: TaskService;

@@ -1,5 +1,5 @@
 import { UserService } from "@models/user/services/UserService";
-import { HttpEntity } from "../../model/http/httpEntity";
+import { HttpEntity } from "@models/http/httpEntity";
 import { User } from "@models/user/dto/user.interface";
 import { Request, Response } from "express";
 import UserRepositoryImpl from "@models/user/repositories/UserRepositoryImpl";
