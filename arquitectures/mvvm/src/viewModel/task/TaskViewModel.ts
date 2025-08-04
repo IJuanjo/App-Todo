@@ -3,7 +3,7 @@ import { Request, Response } from "express";
 import { HttpEntity } from "@models/http/httpEntity";
 import { Task } from "@models/task/dto/task.dto";
 
-class TaskController {
+class TaskViewModel {
     constructor(private taskRepository: TaskRepository) {}
     async getTaskById(req: Request, res: Response): Promise<Response<HttpEntity<Task>> | void> {
         try {
@@ -115,4 +115,4 @@ class TaskController {
     }
 }
 
-export default TaskController;
+export default TaskViewModel;
