@@ -8,7 +8,23 @@
     "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["mvvm", "todo", "express", "architecture", "viewmodel"],
+  "keywords": [
+    "mvvm",
+    "todo",
+    "express",
+    "architecture",
+    "viewmodel"
+  ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "lowdb": "^7.0.1",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.1.0",
+    "@types/uuid": "^10.0.0"
+  }
 }
