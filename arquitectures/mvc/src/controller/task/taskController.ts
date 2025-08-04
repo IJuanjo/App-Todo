@@ -1,18 +1,14 @@
+import { TaskRepository } from './../../model/task/repositories/TaskRepository';
 import { Request, Response } from "express";
 import { HttpEntity } from "@models/http/httpEntity";
 import { Task } from "@models/task/dto/task.dto";
-import { TaskService } from "@models/task/services/TaskService";
-import TaskRepositoryImpl from "@models/task/repositories/TaskRepositoryImpl";
 
 class TaskController {
-    taskService: TaskService;
-    constructor() {
-        this.taskService = new TaskService(TaskRepositoryImpl);
-    }
+    constructor(private taskRepository: TaskRepository) {}
     async getTaskById(req: Request, res: Response): Promise<Response<HttpEntity<Task>> | void> {
         try {
             const { id } = req.params;
-            const task = await this.taskService.getTaskById(id);
+            const task = await this.taskRepository.findById(id);
             if (!task) {
                 return res.status(404).json({
                     status: 404,
@@ -34,7 +30,7 @@ class TaskController {
     }
     async getAllTasks(_: Request, res: Response): Promise<Response<HttpEntity<Task>> | void> {
         try {
-            const tasks = await this.taskService.getAllTasks();
+            const tasks = await this.taskRepository.findAll();
             if (tasks.length === 0) {
                 return res.status(404).json({
                     status: 404,
@@ -57,7 +53,7 @@ class TaskController {
     async createTask(req: Request, res: Response): Promise<Response<HttpEntity<Task>> | void> {
         try {
             const taskData: Task = req.body;
-            const newTask = await this.taskService.createTask(taskData);
+            const newTask = await this.taskRepository.create(taskData);
             return res.status(201).json({
                 status: 201,
                 message: "Task created successfully",
@@ -75,7 +71,7 @@ class TaskController {
         try {
             const { id } = req.params;
             const taskData: Task = req.body;
-            const updatedTask = await this.taskService.updateTask(id, taskData);
+            const updatedTask = await this.taskRepository.update(id, taskData);
             if (!updatedTask) {
                 return res.status(404).json({
                     status: 404,
@@ -98,7 +94,7 @@ class TaskController {
     async deleteTask(req: Request, res: Response): Promise<Response<HttpEntity<Task>> | void> {
         try {
             const { id } = req.params;
-            const deleted = await this.taskService.deleteTask(id);
+            const deleted = await this.taskRepository.delete(id);
             if (!deleted) {
                 return res.status(404).json({
                     status: 404,
