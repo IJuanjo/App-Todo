@@ -1,6 +1,6 @@
 import { Task } from "../dto/task.dto";
 import { TaskRepository } from "./TaskRepository";
-import db from '../database/taskDB';
+import db from '@database/taskDB';
 
 
 class TaskRepositoryImpl implements TaskRepository {

@@ -1,5 +1,5 @@
 import { JSONFilePreset } from 'lowdb/node'
-import { Task } from '../dto/task.dto';
+import { Task } from '../task/dto/task.dto';
 
 
 interface DatabaseSchema {
@@ -10,6 +10,6 @@ const defaultData: DatabaseSchema = {
     tasks: []
 };
 
-const db = await JSONFilePreset<DatabaseSchema>('db.json', defaultData);
+const db = await JSONFilePreset<DatabaseSchema>('src/model/database/db.json', defaultData);
 
 export default db;

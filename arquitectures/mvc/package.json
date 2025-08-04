@@ -1,11 +1,13 @@
 {
   "name": "mvc-todo",
   "version": "1.0.0",
+  "type": "module",
   "description": "Todo application implementing Model-View-Controller (MVC) architecture pattern. Separates business logic (Model), user interface (View), and application flow control (Controller).",
-  "main": "app.js",
+  "main": "dist/app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
+    "dev": "tsup src/app.ts --watch",
+    "start": "node dist/app.js",
+    "build": "tsup",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -22,6 +24,10 @@
     "uuid": "^11.1.0"
   },
   "devDependencies": {
-    "@types/uuid": "^10.0.0"
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.1.0",
+    "@types/uuid": "^10.0.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2"
   }
 }
