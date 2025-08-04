@@ -1,4 +1,4 @@
-import { Task } from "../dto/task.dto";
+import { Task } from "@models/task/dto/task.dto";
 
 export interface TaskRepository {
     findAll(): Promise<Task[]>;

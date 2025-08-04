@@ -1,5 +1,5 @@
 import { Task } from "../dto/task.dto";
-import { TaskRepository } from "../repositories/TaskRepository";
+import { TaskRepository } from "@models/task/repositories/TaskRepository";
 
 class TaskService {
     private taskRepository: TaskRepository;

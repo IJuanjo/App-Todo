@@ -1,4 +1,4 @@
-import { Task } from "../dto/task.dto";
+import { Task } from "@models/task/dto/task.dto";
 import { TaskRepository } from "./TaskRepository";
 import db from '@database/taskDB';
 

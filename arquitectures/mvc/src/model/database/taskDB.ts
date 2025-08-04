@@ -1,5 +1,5 @@
 import { JSONFilePreset } from 'lowdb/node'
-import { Task } from '../task/dto/task.dto';
+import { Task } from '@models/task/dto/task.dto';
 
 
 interface DatabaseSchema {
