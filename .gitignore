@@ -180,3 +180,6 @@ config/local.js
 # Lock files (keep only pnpm-lock.yaml for consistency)
 package-lock.json
 yarn.lock
+
+# db.json (if using lowdb or similar)
+**/db.json
